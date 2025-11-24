@@ -24,7 +24,7 @@ Generates explainability charts using SHAP
 
 The workflow is fully reproducible and structured for production use.
 
-2. Objectives
+## 2. Objectives
 
 Retrieve the Airbnb dataset from AWS S3 using secure programmatic access.
 
@@ -38,7 +38,7 @@ Use MLflow for experiment tracking, comparison, and model registry.
 
 Provide insights and recommendations based on model performance.
 
-3. Repository Structure
+## 3. Repository Structure
 Staywise-Airbnb-Pricing/
 │
 ├── notebooks/
@@ -71,8 +71,8 @@ Staywise-Airbnb-Pricing/
 ├── .gitignore
 └── README.md
 
-4. Setup Instructions
-4.1. Clone the repository
+## 4. Setup Instructions
+### 4.1. Clone the repository
 git clone https://github.com/Gr8man07/Staywise-Airbnb-Pricing.git
 cd Staywise-Airbnb-Pricing
 
