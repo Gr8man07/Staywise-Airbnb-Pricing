@@ -93,7 +93,6 @@ S3_PATH=s3://my-airbnb-pricing/AB_NYC_2019.csv
 ### **5.1. Launch MLflow UI**
 mlflow ui
 <img width="494" height="380" alt="image" src="https://github.com/user-attachments/assets/68378d7e-9be0-49d0-b051-908049f2e46a" />
-
 <img width="921" height="452" alt="image" src="https://github.com/user-attachments/assets/6aebdc07-faf9-4a0c-81ac-3e0dd8b9a133" />
 <img width="912" height="457" alt="image" src="https://github.com/user-attachments/assets/ccfe600b-0673-4d6e-b615-882f7c715a5c" />
 
@@ -102,25 +101,25 @@ Open the dashboard:
 
 http://127.0.0.1:5000
 
-### **5.2 Run training pipeline
+### **5.2 Run training pipeline**
 python src/train.py
 
 ## 6. MLflow Graphics
 
-### **6.1. MLflow
+### **6.1. MLflow**
 <img width="296" height="184" alt="image" src="https://github.com/user-attachments/assets/93e1c561-4d2b-415b-8030-73c6c2f7bd70" />
 
-### **6.2. MLflow — Metrics Comparison
+### **6.2. MLflow** — Metrics Comparison
 
 <img width="185" height="65" alt="image" src="https://github.com/user-attachments/assets/c2a5dd88-80a9-4e79-8348-949f40d4522f" />
 
-### **6.3 MLflow — Artifacts
+### **6.3 MLflow **— Artifacts
 <img width="230" height="142" alt="image" src="https://github.com/user-attachments/assets/553611b9-1818-4be2-9d7e-b2fa24531986" />
 <img width="481" height="306" alt="image" src="https://github.com/user-attachments/assets/8ab59fa7-63d5-4b94-b750-b99d9a77b910" />
 <img width="480" height="314" alt="image" src="https://github.com/user-attachments/assets/6a625b65-b31e-4563-a008-cb081ab0e8fa" />
 
 ## 7. Key Insights and Findings
-### ** 7.1 Data Insights
+### ** 7.1** Data Insights
 
 Price varies heavily by neighbourhood and room type, with Manhattan listings priced significantly higher.
 
@@ -128,7 +127,7 @@ Properties with more reviews generally achieve more stable pricing patterns.
 
 Several numeric features required imputation due to missing values.
 
-### ** 7.2 Feature Engineering Impact
+### ** 7.2** Feature Engineering Impact
 
 Taking the logarithm of price improved model stability.
 
@@ -136,11 +135,11 @@ Review frequency and host listing count helped differentiate host types.
 
 Combining latitude and longitude captures neighbourhood dynamics effectively.
 
-### ** 7.3 Model Performance
+### ** 7.3** Model Performance
 
 The best model (RandomForest) achieved strong predictive performance with reduced RMSE after feature scaling and OHE encoding.
 
-### ** 7.4 Explainability Observations (SHAP)
+### ** 7.4** Explainability Observations (SHAP)
 
 Neighbourhood and room type were the strongest drivers of price.
 
