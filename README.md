@@ -1,169 +1,162 @@
-# Staywise-Airbnb-Pricing
-Airbnb nightly price prediction with MLflow + S3
-# StayWise Airbnb Pricing Prediction  
-Predicting Nightly Listing Prices Using AWS S3, MLflow, and Machine Learning
+StayWise Airbnb Pricing Prediction
 
-## 1. Project Overview
-StayWise is a global vacation rental platform that aims to provide hosts with accurate, data-driven pricing recommendations. Nightly listing prices vary widely across New York City, influenced by factors such as neighbourhood, property type, host activity, and guest reviews.  
+Predicting nightly listing prices using AWS S3, MLflow, and machine learning.
 
-This project delivers a complete machine learning solution that predicts nightly listing prices using the Airbnb NYC 2019 dataset stored in AWS S3.  
-The solution follows a modern, reproducible workflow supported by **MLflow** for experiment tracking and model management.
+1. Project Overview
 
-The final deliverable includes data loading, preprocessing, feature engineering, model training, experiment comparison, explainability analysis, and model registration.
+StayWise is a global vacation rental service aiming to provide hosts with accurate, data-driven pricing recommendations. Nightly prices vary widely across New York City, influenced by neighbourhood, room type, host behavior, and property attributes.
 
----
+This project builds a complete ML workflow that:
 
-## 2. Objectives
-This project was designed with the following objectives:
+Loads the Airbnb dataset directly from AWS S3
 
-- Retrieve the Airbnb listing dataset directly from **AWS S3** using secure programmatic access.
-- Perform comprehensive **data cleaning** to address missing values, inconsistencies, and outliers.
-- Apply meaningful **feature engineering** to enrich model inputs.
-- Build and compare multiple **regression models** for accurate price prediction.
-- Track all experiments using **MLflow**, capturing parameters, metrics, and artifacts.
-- Register the best-performing model for production use.
-- Present results, insights, and recommendations in a reusable research workflow.
+Cleans and preprocesses data
 
----
+Performs feature engineering
 
-## 3. Repository Structure
+Trains multiple regression models
 
+Tracks all experiments using MLflow
+
+Registers the best-performing model
+
+Generates explainability charts using SHAP
+
+The workflow is fully reproducible and structured for production use.
+
+2. Objectives
+
+Retrieve the Airbnb dataset from AWS S3 using secure programmatic access.
+
+Perform complete data preprocessing, including missing value treatment and outlier handling.
+
+Engineer features to improve predictive power.
+
+Train and compare several regression models.
+
+Use MLflow for experiment tracking, comparison, and model registry.
+
+Provide insights and recommendations based on model performance.
+
+3. Repository Structure
 Staywise-Airbnb-Pricing/
 │
 ├── notebooks/
-│ ├── 01_data_loading_eda.ipynb
-│ ├── 02_preprocessing_feature_engineering.ipynb
-│ ├── 03_Modeling_MlFlow_and_Explainability.ipynb
-│
+│   ├── 01_data_loading_eda.ipynb
+│   ├── 02_preprocessing_feature_engineering.ipynb
+│   ├── 03_modeling_mlflow_explainability.ipynb
 │
 ├── src/
-│ ├── data.py
-│ ├── process.py
-│ ├── train.py
-│ └── utils.py
+│   ├── data.py
+│   ├── process.py
+│   ├── train.py
+│   └── utils.py
 │
 ├── docs/
-│ └── screenshots/
-│ ├── mlflow_runs.png
-│ ├── mlflow_metrics.png
-│ ├── mlflow_artifacts.png
-│ └── mlflow_registry.png
+│   └── screenshots/
+│       ├── mlflow_runs.png
+│       ├── mlflow_metrics.png
+│       ├── mlflow_artifacts.png
+│       └── mlflow_registry.png
 │
 ├── artifacts/
-│ ├── airbnb_preprocessor.joblib
-│ ├── shap_summary.png
-│ ├── shap_dependence.png
+│   ├── airbnb_preprocessor.joblib
+│   ├── shap_summary.png
+│   ├── shap_dependence.png
 │
 ├── data/
-│ ├── sample_processed.parquet
+│   ├── sample_processed.parquet
 │
 ├── requirements.txt
 ├── .gitignore
-├── README.md
-└── LICENSE (optional)
+└── README.md
 
-
----
-
-## 4. Setup Instructions
-
-### **4.1. Clone the repository**
-```bash
+4. Setup Instructions
+4.1. Clone the repository
 git clone https://github.com/Gr8man07/Staywise-Airbnb-Pricing.git
 cd Staywise-Airbnb-Pricing
 
-### **4.2. Create and activate a virtual environment**
+4.2. Create and activate a virtual environment
 python -m venv venv
 venv\Scripts\activate
 
-### **4.3. Install project dependencies**
+4.3. Install the dependencies
 pip install -r requirements.txt
 
-### **4.4. Configure AWS credentials**
+4.4. Configure AWS credentials
 
 Create a .env file in the project root:
 
-AWS_ACCESS_KEY_ID=YOUR_KEY  
-AWS_SECRET_ACCESS_KEY=YOUR_SECRET  
+AWS_ACCESS_KEY_ID=YOUR_KEY
+AWS_SECRET_ACCESS_KEY=YOUR_SECRET
 AWS_REGION=us-east-2
 S3_PATH=s3://my-airbnb-pricing/AB_NYC_2019.csv
 
-## 5. Running the Workflow 
-
-### **5.1. Launch MLflow UI**
+5. Running the Workflow
+5.1. Launch MLflow UI
 mlflow ui
-<img width="494" height="380" alt="image" src="https://github.com/user-attachments/assets/68378d7e-9be0-49d0-b051-908049f2e46a" />
-<img width="921" height="452" alt="image" src="https://github.com/user-attachments/assets/6aebdc07-faf9-4a0c-81ac-3e0dd8b9a133" />
-<img width="912" height="457" alt="image" src="https://github.com/user-attachments/assets/ccfe600b-0673-4d6e-b615-882f7c715a5c" />
 
 
-Open the dashboard:
+Your dashboard will look similar to the screenshots below:
 
+<img width="494" height="380" alt="MLflow Screenshot 1" src="https://github.com/user-attachments/assets/68378d7e-9be0-49d0-b051-908049f2e46a" /> <img width="921" height="452" alt="MLflow Screenshot 2" src="https://github.com/user-attachments/assets/6aebdc07-faf9-4a0c-81ac-3e0dd8b9a133" /> <img width="912" height="457" alt="MLflow Screenshot 3" src="https://github.com/user-attachments/assets/ccfe600b-0673-4d6e-b615-882f7c715a5c" />
+
+Access MLflow here:
 http://127.0.0.1:5000
 
-### **5.2 Run training pipeline**
+5.2. Run the training pipeline
 python src/train.py
 
-## 6. MLflow Graphics
+6. MLflow Graphics
+6.1. Experiment Runs Overview
+<img width="296" height="184" src="https://github.com/user-attachments/assets/93e1c561-4d2b-415b-8030-73c6c2f7bd70" />
+6.2. Metrics Comparison
+<img width="185" height="65" src="https://github.com/user-attachments/assets/c2a5dd88-80a9-4e79-8348-949f40d4522f" />
+6.3. Logged Artifacts
+<img width="230" height="142" src="https://github.com/user-attachments/assets/553611b9-1818-4be2-9d7e-b2fa24531986" /> <img width="481" height="306" src="https://github.com/user-attachments/assets/8ab59fa7-63d5-4b94-b750-b99d9a77b910" /> <img width="480" height="314" src="https://github.com/user-attachments/assets/6a625b65-b31e-4563-a008-cb081ab0e8fa" />
+7. Key Findings & Insights
+7.1. Data Insights
 
-### **6.1. MLflow**
-<img width="296" height="184" alt="image" src="https://github.com/user-attachments/assets/93e1c561-4d2b-415b-8030-73c6c2f7bd70" />
+Prices vary significantly by neighbourhood—Manhattan being the highest.
 
-### **6.2. MLflow** — Metrics Comparison
+Listings with more reviews tend to have more stable pricing patterns.
 
-<img width="185" height="65" alt="image" src="https://github.com/user-attachments/assets/c2a5dd88-80a9-4e79-8348-949f40d4522f" />
+Several numeric fields required imputation due to missing values.
 
-### **6.3 MLflow **— Artifacts
-<img width="230" height="142" alt="image" src="https://github.com/user-attachments/assets/553611b9-1818-4be2-9d7e-b2fa24531986" />
-<img width="481" height="306" alt="image" src="https://github.com/user-attachments/assets/8ab59fa7-63d5-4b94-b750-b99d9a77b910" />
-<img width="480" height="314" alt="image" src="https://github.com/user-attachments/assets/6a625b65-b31e-4563-a008-cb081ab0e8fa" />
+7.2. Feature Engineering Observations
 
-## 7. Key Insights and Findings
-### ** 7.1** Data Insights
+Log-transforming price greatly stabilized variance.
 
-Price varies heavily by neighbourhood and room type, with Manhattan listings priced significantly higher.
+Reviews per month and host listing count improved model separation.
 
-Properties with more reviews generally achieve more stable pricing patterns.
+Latitude and longitude offer strong predictive power for location.
 
-Several numeric features required imputation due to missing values.
+7.3. Model Performance
 
-### ** 7.2** Feature Engineering Impact
+The Random Forest Regressor achieved the best RMSE after preprocessing.
 
-Taking the logarithm of price improved model stability.
+One-hot encoding + scaling yielded significant improvements.
 
-Review frequency and host listing count helped differentiate host types.
+7.4. Explainability (SHAP)
 
-Combining latitude and longitude captures neighbourhood dynamics effectively.
+Neighbourhood and room_type are the strongest predictors.
 
-### ** 7.3** Model Performance
+Availability_365 and host listing count influence pricing.
 
-The best model (RandomForest) achieved strong predictive performance with reduced RMSE after feature scaling and OHE encoding.
+SHAP visualizations clearly show feature impact.
 
-### ** 7.4** Explainability Observations (SHAP)
+<img width="298" height="358" src="https://github.com/user-attachments/assets/e59c627f-a5ad-4a29-871e-0b7a85303959" /> <img width="266" height="178" src="https://github.com/user-attachments/assets/a4ec5596-70f8-4c17-a5f6-de9ccb43821f" /> <img width="269" height="203" src="https://github.com/user-attachments/assets/b48bbe1c-43c7-4240-8691-b4fdbbcc717c" />
+8. Recommendations for StayWise
 
-Neighbourhood and room type were the strongest drivers of price.
+Integrate the model into the host onboarding workflow to provide live price suggestions.
 
-Availability and host listing count contributed to price variation.
+Schedule monthly retraining using MLflow to keep the model fresh.
 
-SHAP plots provided clear, interpretable insights into each feature’s effect.
-<img width="298" height="358" alt="image" src="https://github.com/user-attachments/assets/e59c627f-a5ad-4a29-871e-0b7a85303959" />
-<img width="266" height="178" alt="image" src="https://github.com/user-attachments/assets/a4ec5596-70f8-4c17-a5f6-de9ccb43821f" />
-<img width="269" height="203" alt="image" src="https://github.com/user-attachments/assets/b48bbe1c-43c7-4240-8691-b4fdbbcc717c" />
+Expand with additional time-dependent (seasonal) and spatial features.
 
+Evaluate more advanced models such as XGBoost or LightGBM.
 
-## 8. Recommendations for StayWise
+9. Conclusion
 
-Integrate the model into host onboarding to generate real-time pricing suggestions.
-
-Schedule monthly automated retraining through MLflow for model freshness.
-
-Enrich training data with additional spatial features, seasonal trends, and host response rates.
-
-Consider future expansion into time-series dynamic pricing models.
-
-## 9. Conclusion
-
-This project delivers a robust, reproducible workflow for predicting Airbnb listing prices using AWS S3, MLflow, and modern machine learning techniques.
-By applying strong preprocessing, thoughtful feature engineering, and meticulous model tracking, the solution provides clear predictive capability and business value for StayWise.
-
-
+This project successfully delivers a robust, end-to-end ML workflow for predicting Airbnb listing prices using AWS S3 and MLflow.
+With clean preprocessing, strong feature engineering, and thorough experiment tracking, the solution provides meaningful predictive accuracy and business value for StayWise.
