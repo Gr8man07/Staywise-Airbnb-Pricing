@@ -1,8 +1,8 @@
-StayWise Airbnb Pricing Prediction
+# StayWise Airbnb Pricing Prediction
 
 Predicting nightly listing prices using AWS S3, MLflow, and machine learning.
 
-1. Project Overview
+## 1. Project Overview
 
 StayWise is a global vacation rental service aiming to provide hosts with accurate, data-driven pricing recommendations. Nightly prices vary widely across New York City, influenced by neighbourhood, room type, host behavior, and property attributes.
 
