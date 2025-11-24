@@ -1,4 +1,4 @@
-** StayWise Airbnb Pricing Prediction **
+StayWise Airbnb Pricing Prediction
 
 Predicting nightly listing prices using AWS S3, MLflow, and machine learning.
 
@@ -146,6 +146,7 @@ Availability_365 and host listing count influence pricing.
 SHAP visualizations clearly show feature impact.
 
 <img width="298" height="358" src="https://github.com/user-attachments/assets/e59c627f-a5ad-4a29-871e-0b7a85303959" /> <img width="266" height="178" src="https://github.com/user-attachments/assets/a4ec5596-70f8-4c17-a5f6-de9ccb43821f" /> <img width="269" height="203" src="https://github.com/user-attachments/assets/b48bbe1c-43c7-4240-8691-b4fdbbcc717c" />
+
 8. Recommendations for StayWise
 
 Integrate the model into the host onboarding workflow to provide live price suggestions.
