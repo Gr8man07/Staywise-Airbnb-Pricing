@@ -31,10 +31,10 @@ This project was designed with the following objectives:
 Staywise-Airbnb-Pricing/
 │
 ├── notebooks/
-│ ├── 00_data_loading_eda.ipynb
-│ ├── 01_preprocessing_feature_engineering.ipynb
-│ ├── 02_modeling_mlflow.ipynb
-│ └── 03_explainability_validation.ipynb
+│ ├── 01_data_loading_eda.ipynb
+│ ├── 02_preprocessing_feature_engineering.ipynb
+│ ├── 03_Modeling_MlFlow_and_Explainability.ipynb
+│
 │
 ├── src/
 │ ├── data.py
