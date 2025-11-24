@@ -93,6 +93,7 @@ S3_PATH=s3://my-airbnb-pricing/AB_NYC_2019.csv
 ### **5.1. Launch MLflow UI
 mlflow ui
 <img width="494" height="380" alt="image" src="https://github.com/user-attachments/assets/68378d7e-9be0-49d0-b051-908049f2e46a" />
+
 <img width="921" height="452" alt="image" src="https://github.com/user-attachments/assets/6aebdc07-faf9-4a0c-81ac-3e0dd8b9a133" />
 <img width="912" height="457" alt="image" src="https://github.com/user-attachments/assets/ccfe600b-0673-4d6e-b615-882f7c715a5c" />
 
