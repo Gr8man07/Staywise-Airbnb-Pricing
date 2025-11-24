@@ -72,14 +72,14 @@ Staywise-Airbnb-Pricing/
 git clone https://github.com/Gr8man07/Staywise-Airbnb-Pricing.git
 cd Staywise-Airbnb-Pricing
 
-### **4.2. Create and activate a virtual environment
+### **4.2. Create and activate a virtual environment**
 python -m venv venv
 venv\Scripts\activate
 
-### **4.3. Install project dependencies
+### **4.3. Install project dependencies**
 pip install -r requirements.txt
 
-### **4.4. Configure AWS credentials
+### **4.4. Configure AWS credentials**
 
 Create a .env file in the project root:
 
@@ -88,7 +88,7 @@ AWS_SECRET_ACCESS_KEY=YOUR_SECRET
 AWS_REGION=us-east-2
 S3_PATH=s3://my-airbnb-pricing/AB_NYC_2019.csv
 
-## 5. Running the Workflow
+## 5. Running the Workflow 
 
 ### **5.1. Launch MLflow UI**
 mlflow ui
