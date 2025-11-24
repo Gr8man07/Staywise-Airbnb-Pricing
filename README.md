@@ -24,6 +24,34 @@ Generates explainability charts using SHAP
 
 The workflow is fully reproducible and structured for production use.
 
+
+
+StayWise Airbnb Pricing Prediction
+
+Predicting nightly listing prices using AWS S3, MLflow, and machine learning.
+
+1. Project Overview
+
+StayWise is a global vacation rental service aiming to provide hosts with accurate, data-driven pricing recommendations. Nightly prices vary widely across New York City, influenced by neighbourhood, room type, host behavior, and property attributes.
+
+This project builds a complete ML workflow that:
+
+Loads the Airbnb dataset directly from AWS S3
+
+Cleans and preprocesses data
+
+Performs feature engineering
+
+Trains multiple regression models
+
+Tracks all experiments using MLflow
+
+Registers the best-performing model
+
+Generates explainability charts using SHAP
+
+The workflow is fully reproducible and structured for production use.
+
 2. Objectives
 
 Retrieve the Airbnb dataset from AWS S3 using secure programmatic access.
