@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# MLflow
+mlruns/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files
+data/*.csv
+data/*.parquet
+*.zip
+
+# System files
+Thumbs.db
+.DS_Store
